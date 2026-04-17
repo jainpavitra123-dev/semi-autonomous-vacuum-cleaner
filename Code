@@ -1,0 +1,190 @@
+// ---------------- MOTOR PINS ----------------
+
+// Left motor
+#define PWMA 3
+#define AIN1 4
+#define AIN2 5
+
+// Right motor
+#define PWMB 6
+#define BIN1 7
+#define BIN2 8
+
+#define STBY 9
+
+// ---------------- ULTRASONIC ----------------
+
+// Center
+#define TRIG_C 10
+#define ECHO_C 11
+
+// Left
+#define TRIG_L A0
+#define ECHO_L A1
+
+// Right
+#define TRIG_R A2
+#define ECHO_R A3
+
+// ---------------- IR SENSORS ----------------
+
+#define IR_LEFT 2
+#define IR_RIGHT 12
+
+// ---------------- RELAY ----------------
+
+#define RELAY 13
+
+
+// ---------------- SETUP ----------------
+
+void setup() {
+
+  pinMode(PWMA, OUTPUT);
+  pinMode(AIN1, OUTPUT);
+  pinMode(AIN2, OUTPUT);
+
+  pinMode(PWMB, OUTPUT);
+  pinMode(BIN1, OUTPUT);
+  pinMode(BIN2, OUTPUT);
+
+  pinMode(STBY, OUTPUT);
+
+  pinMode(TRIG_C, OUTPUT);
+  pinMode(ECHO_C, INPUT);
+
+  pinMode(TRIG_L, OUTPUT);
+  pinMode(ECHO_L, INPUT);
+
+  pinMode(TRIG_R, OUTPUT);
+  pinMode(ECHO_R, INPUT);
+
+  pinMode(IR_LEFT, INPUT);
+  pinMode(IR_RIGHT, INPUT);
+
+  pinMode(RELAY, OUTPUT);
+
+  digitalWrite(STBY, HIGH);
+  digitalWrite(RELAY, HIGH); // suction ON
+}
+
+
+// ---------------- MOTOR FUNCTIONS ----------------
+
+void forward(int speed) {
+  digitalWrite(AIN1, HIGH);
+  digitalWrite(AIN2, LOW);
+  analogWrite(PWMA, speed);
+
+  digitalWrite(BIN1, HIGH);
+  digitalWrite(BIN2, LOW);
+  analogWrite(PWMB, speed);
+}
+
+void backward(int speed) {
+  digitalWrite(AIN1, LOW);
+  digitalWrite(AIN2, HIGH);
+  analogWrite(PWMA, speed);
+
+  digitalWrite(BIN1, LOW);
+  digitalWrite(BIN2, HIGH);
+  analogWrite(PWMB, speed);
+}
+
+void left(int speed) {
+  digitalWrite(AIN1, LOW);
+  digitalWrite(AIN2, HIGH);
+  analogWrite(PWMA, speed);
+
+  digitalWrite(BIN1, HIGH);
+  digitalWrite(BIN2, LOW);
+  analogWrite(PWMB, speed);
+}
+
+void right(int speed) {
+  digitalWrite(AIN1, HIGH);
+  digitalWrite(AIN2, LOW);
+  analogWrite(PWMA, speed);
+
+  digitalWrite(BIN1, LOW);
+  digitalWrite(BIN2, HIGH);
+  analogWrite(PWMB, speed);
+}
+
+void stopMotors() {
+  analogWrite(PWMA, 0);
+  analogWrite(PWMB, 0);
+}
+
+
+// ---------------- DISTANCE FUNCTION ----------------
+
+long getDistance(int trig, int echo) {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trig, LOW);
+
+  long duration = pulseIn(echo, HIGH, 20000); // timeout safety
+  long distance = duration * 0.034 / 2;
+
+  return distance;
+}
+
+
+// ---------------- MAIN LOOP ----------------
+
+void loop() {
+
+  int leftIR = digitalRead(IR_LEFT);
+  int rightIR = digitalRead(IR_RIGHT);
+
+  long dC = getDistance(TRIG_C, ECHO_C);
+  delay(30);
+  long dL = getDistance(TRIG_L, ECHO_L);
+  delay(30);
+  long dR = getDistance(TRIG_R, ECHO_R);
+  delay(30);
+
+  // -------- EDGE DETECTION --------
+  if (leftIR == LOW || rightIR == LOW) {
+    backward(150);
+    delay(400);
+
+    right(150);
+    delay(400);
+  }
+
+  // -------- SMART OBSTACLE AVOIDANCE --------
+  else if (dC < 20) {
+
+    stopMotors();
+    delay(100);
+
+    // Decide direction based on free space
+    if (dL > dR) {
+      left(150);
+      delay(400);
+    } else {
+      right(150);
+      delay(400);
+    }
+  }
+
+  else if (dL < 15) {
+    right(150);
+    delay(200);
+  }
+
+  else if (dR < 15) {
+    left(150);
+    delay(200);
+  }
+
+  // -------- NORMAL FORWARD --------
+  else {
+    forward(180);
+  }
+}
