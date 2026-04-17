@@ -38,4 +38,4 @@ Ongoing – working on improving design efficiency and overall system performanc
 * Improve navigation system
 * Optimize power consumption
 * Enhance cleaning efficiency
-* Add obstacle detection (if not already)
+* Add obstacle detection
