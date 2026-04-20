@@ -72,13 +72,12 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ## 📸 Project Visuals
 
-(Add images in `/images` folder)
 
-![Final Model](images/final_model.png)
-![CAD Design](images/cad_model.png)
-![Electronics Setup](images/electronics.png)
 
----
+![Bot Front Viewl](images/Bot_frontView_image.jpeg)
+![CAD Design](images/Bot_TopView_image.jpeg)
+![Chasis](images/images/Chasis_image.jpeg)
+
 
 ## 🚧 Current Status
 
