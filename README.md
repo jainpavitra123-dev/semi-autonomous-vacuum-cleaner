@@ -1,41 +1,115 @@
-# Semi-Autonomous Vacuum Cleaning Robot
+# 🧹 Semi-Autonomous Vacuum Cleaning Robot
 
-## Overview
+## 📌 Overview
 
-This project focuses on designing and developing a semi-autonomous vacuum cleaning robot aimed at improving household cleaning efficiency.
+A compact semi-autonomous vacuum cleaning robot designed specifically for cleaning **small surfaces like tables and shelves**, where conventional vacuum systems are ineffective.
 
-## Objective
+This project focuses on integrating **mechanical design, electronics, and control systems** into a space-efficient solution.
 
-To build a compact robotic system capable of basic cleaning operations with partial automation.
+---
 
-## Team
+## 🎯 Objective
+
+To design and develop a **compact, lightweight cleaning robot** capable of:
+
+* Navigating small surfaces
+* Avoiding obstacles
+* Performing basic vacuum-based cleaning
+
+---
+
+## 👥 Team
 
 * 2-member team (including myself)
 
-## My Contributions
+---
+
+## 🛠️ My Contributions
 
 * Designed and optimized the robot structure using SolidWorks
-* Assisted in integration of mechanical and electronic components
-* Participated in assembly and testing of the system
+* Developed compact chassis for constrained spaces
+* Assisted in integration of mechanical and electronic systems
+* Participated in assembly, testing, and iteration
 
-## Components Used
+---
 
-* N20 DC Motors 
-* Battery / Power Supply
-* Chassis (custom CAD design)
-* Microcontroller (if used – add here)
+## ⚙️ Components Used
 
-## Working Principle
+### 🔌 Electronics
 
-The robot moves across the floor using motor-driven wheels while performing cleaning operations. Mechanical and electronic systems are integrated to enable controlled movement and functionality.
+* Arduino Nano
+* TB6612FNG Motor Driver
+* IR Sensor (edge detection / obstacle detection)
+* Ultrasonic Sensor (distance measurement)
+* Li-ion Battery Pack
 
-## Current Status
+### ⚙️ Mechanical
 
-Ongoing – working on improving design efficiency and overall system performance
+* N20 DC Motors (drive system)
+* High RPM DC Motor (vacuum mechanism)
+* Custom chassis (3D printed using PLA+)
 
-## Future Improvements
+---
 
-* Improve navigation system
-* Optimize power consumption
-* Enhance cleaning efficiency
-* Add obstacle detection
+## 🧠 Working Principle
+
+* The robot moves using **differential drive (N20 motors)**
+* IR sensor helps prevent falling from edges (table/shelf)
+* Ultrasonic sensor detects obstacles ahead
+* Microcontroller processes sensor inputs and controls motion
+* A high-speed motor generates suction for cleaning
+
+---
+
+## 🧩 Design Highlights
+
+* Compact form factor for confined spaces
+* Lightweight structure using PLA+
+* Integrated electronics layout to reduce wiring complexity
+* Modular design for easy upgrades
+
+---
+
+## 📸 Project Visuals
+
+(Add images in `/images` folder)
+
+![Final Model](images/final_model.png)
+![CAD Design](images/cad_model.png)
+![Electronics Setup](images/electronics.png)
+
+---
+
+## 🚧 Current Status
+
+Ongoing – Improving:
+
+* Structural efficiency
+* Power optimization
+* Cleaning performance
+
+---
+
+## 🚀 Future Improvements
+
+* Autonomous navigation (line/path planning)
+* Improved suction mechanism
+* Battery management system (BMS integration)
+* Smarter obstacle detection (sensor fusion)
+
+---
+
+## 📂 Files Included
+
+* CAD files (SolidWorks + STEP)
+* Circuit diagrams
+* Component list
+* Project documentation
+
+---
+
+## 🎥 Demo
+
+(Add video link here – Google Drive / YouTube)
+
+---
