@@ -100,19 +100,9 @@ Ongoing – Improving:
 * Battery management system (BMS integration)
 * Smarter obstacle detection (sensor fusion)
 
----
 
-## 📂 Files Included
 
-* CAD files (SolidWorks + STEP)
-* Circuit diagrams
-* Component list
-* Project documentation
 
 ---
 
-## 🎥 Demo
 
-(Add video link here – Google Drive / YouTube)
-
----
