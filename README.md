@@ -1,6 +1,6 @@
-# 🧹 Semi-Autonomous Vacuum Cleaning Robot
+#  Semi-Autonomous Vacuum Cleaning Robot
 
-## 📌 Overview
+##  Overview
 
 A compact semi-autonomous vacuum cleaning robot designed specifically for cleaning **small surfaces like tables and shelves**, where conventional vacuum systems are ineffective.
 
@@ -8,7 +8,7 @@ This project focuses on integrating **mechanical design, electronics, and contro
 
 ---
 
-## 🎯 Objective
+##  Objective
 
 To design and develop a **compact, lightweight cleaning robot** capable of:
 
@@ -18,13 +18,13 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ---
 
-## 👥 Team
+## Team
 
 * 2-member team (including myself)
 
 ---
 
-## 🛠️ My Contributions
+## My Contributions
 
 * Designed and optimized the robot structure using SolidWorks
 * Developed compact chassis for constrained spaces
@@ -33,9 +33,9 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ---
 
-## ⚙️ Components Used
+##  Components Used
 
-### 🔌 Electronics
+### Electronics
 
 * Arduino Nano
 * TB6612FNG Motor Driver
@@ -43,7 +43,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 * Ultrasonic Sensor (distance measurement)
 * Li-ion Battery Pack
 
-### ⚙️ Mechanical
+### Mechanical
 
 * N20 DC Motors (drive system)
 * High RPM DC Motor (vacuum mechanism)
@@ -51,7 +51,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ---
 
-## 🧠 Working Principle
+##  Working Principle
 
 * The robot moves using **differential drive (N20 motors)**
 * IR sensor helps prevent falling from edges (table/shelf)
@@ -61,7 +61,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ---
 
-## 🧩 Design Highlights
+## Design Highlights
 
 * Compact form factor for confined spaces
 * Lightweight structure using PLA+
@@ -70,7 +70,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 ---
 
-## 📸 Project Visuals
+## Project Visuals
 
 
 <p align="center">
@@ -83,7 +83,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 </p
 
 
-## 🚧 Current Status
+## Current Status
 
 Ongoing – Improving:
 
@@ -93,7 +93,7 @@ Ongoing – Improving:
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 * Autonomous navigation (line/path planning)
 * Improved suction mechanism
