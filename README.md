@@ -74,7 +74,7 @@ To design and develop a **compact, lightweight cleaning robot** capable of:
 
 
 
-![Bot Front Viewl](images/Bot_frontView_image.jpeg)
+![Bot Front Viewl](Images/Bot_frontView_image.jpeg)
 ![CAD Design](images/Bot_TopView_image.jpeg)
 ![Chasis](images/images/Chasis_image.jpeg)
 
